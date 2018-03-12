@@ -4,8 +4,9 @@ import { Http, HttpModule } from '@angular/http';
 // vendor dependencies
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 // app
-import { Config } from './common/index';
+import { Config, CommonServiceModule } from './common/index';
 import { AppComponent } from './app.component';
 import { SHARED_MODULES } from './app.common';
 
@@ -27,6 +28,7 @@ export function createTranslateLoader(http: Http) {
                 deps: [Http]
             }
         }),
+        CommonServiceModule,
         ...SHARED_MODULES
     ],
     providers: [],

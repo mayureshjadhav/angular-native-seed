@@ -23,3 +23,9 @@ export class Config {
     }
 
 }
+
+export class APIMethod {
+    public static LOCATION_VALIDATION = "/LocationValidation/{0}";
+    public static MOBILE_SELFREGISTRATION = "/MobileSelfRegistration/{0}"; 
+    public static VALIDATE_MOBILE_REG = "/ValidateMobileSelfRegistration/{0}/{1}/{2}";   
+}

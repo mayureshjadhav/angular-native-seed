@@ -1,0 +1,29 @@
+// Custom common variables
+@import "../../app-common";
+
+.parent-container { margin:20; }
+.parent-container .icon {
+    font-size:60;
+    color: $sherwood-green;
+}
+.app-btn {
+    margin-top:40; 
+    width:150
+}
+    .headline { margin-top:30; font-size:28; color: $error-dark; }
+    .headline-sub { margin:10 0; font-size:20; }
+    .phone-valid { color: $success-dark; font-size: 30; }
+    .phone-invalid { color: $very-light-gray; font-size: 30; }
+    .flag { border-radius: 10; width:30; }
+    .country-code { margin-left:3; font-size: 16; }
+    .country-code-caret { color: #999999; font-size: 16; margin-left:3; vertical-align: center; }
+    .verification-code { margin-top:40; text-align:center; width:200; }
+    .dimmer { opacity: 0.5; background-color: $black; }
+
+    .header { background-color:$sherwood-green; padding-top:10; padding-bottom:10; }
+    .header-text { color:white; font-size: 22; vertical-align:center; }
+    .close-button { width:30; }
+    .list-item { margin-top:10; }
+    .flag { border-radius: 10; width:30; }
+    .country-name { color:$black }
+    .country-dialcode { margin-top:5; color:#999999; }

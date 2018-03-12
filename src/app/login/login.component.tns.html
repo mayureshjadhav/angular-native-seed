@@ -1,0 +1,54 @@
+<GridLayout rows="*" columns="*">
+    <StackLayout *ngIf="!renderView" [visibility]="!isLoading ? 'visible' : 'collapsed'">
+
+        <!-- Location Selection -->
+        <StackLayout *ngIf="showLocationStep" class="parent-container">
+            <Label [text]="'fa-map-marker' | fonticon" class="fa text-center icon" textWrap="true"></Label>
+
+            <Label textWrap="true" text="{{ 'PAGE.LOGIN.LOCATION_HEADING' | translate }}" class="headline text-center"></Label>
+            <Label textWrap="true" text="{{ 'PAGE.LOGIN.LOCATION_SUBHEADING' | translate }}" class="headline-sub text-center"></Label>
+            <TextField [(ngModel)]="location" hint="{{ 'PAGE.LOGIN.LOCATION_HINT' | translate }}" style="margin-top:40;" class="text-field"></TextField>
+
+            <Button text="{{ 'PAGE.LOGIN.BUTTON_NEXT' | translate }}" (tap)="doSelectLocation()" class="btn btn-primary app-btn pull-right"></Button>
+        </StackLayout>
+
+        <!-- Mobile Registration Form -->
+        <StackLayout *ngIf="showRegistrationStep" class="parent-container">
+            <Label [text]="'fa-mobile-phone' | fonticon" class="fa text-center icon" textWrap="true"></Label>
+            <Label textWrap="false" text="{{ 'PAGE.LOGIN.MOBILE_REG_HEADING' | translate }}" class="headline text-center"></Label>
+            <Label textWrap="true" text="{{ 'PAGE.LOGIN.MOBILE_REG_SUBHEADING' | translate }}" class="headline-sub text-center"></Label>
+            <GridLayout columns="100 * 30" rows="auto" style="margin-top:40;">
+                <StackLayout orientation="horizontal" row="0" col="0" (tap)="showCountryCodeModal()" style="vertical-align:center;">
+                    <Image *ngIf="flagImage" [src]="'data:image/png;base64,'+flagImage" class="flag"></Image>
+                    <Label [text]="countryDialCode" class="country-code"></Label>
+                    <Label text="&#xf0d7;" class="fa country-code-caret"></Label>
+                </StackLayout>
+                <TextField class="text-field" row="0" col="1" [(ngModel)]="phoneNumber" keyboardType="phone" hint="{{ 'PAGE.LOGIN.MOBILE_NUMBER_HINT' | translate }}" #phoneField
+                    (textChange)="handleLeadingZero($event)"></TextField>
+                <Label row="0" col="2" text="&#xf058;" [ngClass]="validateNumber() ? 'fa phone-valid' : 'fa phone-invalid'">
+                </Label>
+            </GridLayout>
+
+            <Button text="{{ 'PAGE.LOGIN.BUTTON_NEXT' | translate }}" (tap)="doRegister()" class="btn btn-primary app-btn pull-right" [isEnabled]="validateNumber()"></Button>
+        </StackLayout>
+
+        <!-- Verification Step -->
+        <StackLayout *ngIf="showVerificationStep" class="parent-container">
+            <Label [text]="'fa-comment' | fonticon" class="fa text-center icon" textWrap="true"></Label>
+            <Label textWrap="false" text="{{ 'PAGE.LOGIN.PHONE_VERIFICATION_HEADING' | translate }}" class="headline text-center"></Label>
+            <Label textWrap="true" text="{{ 'PAGE.LOGIN.PHONE_VERIFICATION_SUBHEADING' | translate }}" class="headline-sub text-center"></Label>
+            <TextField class="text-field" [(ngModel)]="verificationCode" hint="{{ 'PAGE.LOGIN.MOBILE_VARIFICATION_HINT' | translate }}" style="margin-top:40;"></TextField>
+            <Button text="{{ 'PAGE.LOGIN.BUTTON_VERIFY' | translate }}" (tap)="doVerifyCode()" class="btn btn-primary app-btn pull-right"></Button>
+        </StackLayout>
+
+
+    </StackLayout>
+
+
+
+
+    <ActivityIndicator [busy]="renderView" [visibility]="renderView ? 'visible' : 'collapse'" horizontalAlignment="center" verticalAlignment="center"
+        row="0"></ActivityIndicator>
+    <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" horizontalAlignment="center" verticalAlignment="center"
+        row="0"></ActivityIndicator>
+</GridLayout>

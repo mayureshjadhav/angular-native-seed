@@ -7,10 +7,13 @@ import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 // vendor dependencies
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 // app
-import { Config } from './common/index';
+import { Config, CommonServiceModule } from './common/index';
 import { AppComponent } from './app.component';
 import { SHARED_MODULES } from './app.common';
+import { AppFontModule } from './shared';
 
 Config.PLATFORM_TARGET = Config.PLATFORMS.MOBILE_NATIVE;
 
@@ -32,6 +35,11 @@ export function createTranslateLoader(http: Http) {
                 deps: [Http]
             }
         }),
+        TNSFontIconModule.forRoot({
+			'fa': './style/font-awesome.css'
+        }),
+        AppFontModule.forRoot(),
+        CommonServiceModule,
         ...SHARED_MODULES
     ],
     declarations: [

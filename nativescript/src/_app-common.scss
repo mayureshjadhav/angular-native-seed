@@ -16,3 +16,63 @@
     font-size:32px;
     font-weight:bold;
 }
+
+// Colors
+$black: #000 !default;
+$white: #fff !default;
+$base: $white !default;
+$grey: #e0e0e0 !default;
+$very-light-gray: #e6e6e6 !default;
+$grey-background: #bababa !default;
+$charcoal: #303030 !default;
+
+$background-dark: #F8F8F8 !default;
+$background-light: #FFFFFF !default;
+
+$blue-dark: #022734 !default;
+$blue-light: #02556E !default;
+$blue-50: rgba($blue-dark, 0.5) !default;
+$blue-20: rgba($blue-dark, 0.2) !default;
+$blue-10: rgba($blue-dark, 0.1) !default;
+
+// accent varieties
+$sherwood-green: #00412b !default;
+
+$accent-dark: #3A53FF !default;
+$accent-light: #4781FE !default;
+
+$success-dark: #06CE6A !default;
+$success-light: #00E676 !default;
+
+$warning-dark: #f39c11 !default;
+$warning-light: #F2C112 !default;
+
+$error-dark: #D84039 !default;
+$error-light: #ED473F !default;
+
+$midnight-dark: #0F336D !default;
+$midnight-light: #14418B !default;
+
+$night-dark: #023141 !default;
+$night-light: #01526C !default;
+
+$page-icon-color: #D7D7D7 !default;
+$page-content-placeholder-font-size: 20;
+
+// ActionBar
+$ab-background: $sherwood-green !default;
+$ab-color: $white !default;
+
+$page-content-font-size: 14;
+$page-content-h1-font-size: 36;
+$page-content-h2-font-size: 30;
+$page-content-h3-font-size: 24;
+$page-content-h4-font-size: 18;
+$page-content-h6-font-size: 12;
+
+$item-heading-font-size: 16;
+
+$input-border-radius: 30;
+
+$img-round-border-radius: 5;
+$img-circle-border-radius: 20;

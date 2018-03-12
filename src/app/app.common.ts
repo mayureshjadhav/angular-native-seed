@@ -1,12 +1,12 @@
 import { AppRoutingModule } from './app-routing.module';
 // demo
 import { HomeModule } from './home/home.module';
-import { MenuModule } from './menu/menu.module';
+import { DirectiveModule } from './common/index';
 
 export const SHARED_MODULES: any[] = [
     AppRoutingModule,
     HomeModule,
-    MenuModule
+    DirectiveModule
 ];
 
 export * from './app-routing.module';

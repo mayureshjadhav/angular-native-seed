@@ -4,12 +4,16 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 @NgModule({
-    imports: [ CommonModule ],
+    imports: [CommonModule,
+        ModalModule.forRoot()],
     declarations: [],
     exports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        ModalModule
     ]
 })
 export class SharedModule { };
